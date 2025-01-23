@@ -16,7 +16,7 @@ struct ContentView: View {
             // طبقة التدرج
             LinearGradient(
                 gradient: Gradient(stops: [
-                    Gradient.Stop(color: Color.black.opacity(0.7), location: 0.0),
+                    Gradient.Stop(color: Color.black.opacity(0.5), location: 0.0),
                     Gradient.Stop(color: Color.black.opacity(1.0), location: 0.8)
                 ]),
                 startPoint: .top,
