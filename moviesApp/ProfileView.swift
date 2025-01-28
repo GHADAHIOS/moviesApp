@@ -23,6 +23,13 @@ struct ProfileView: View {
                 }
                 .padding(.horizontal)
                 
+                // Profile Title
+                Text("Profile")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .padding(.horizontal)
+                
                 // Profile Section
                 VStack(spacing: 10) {
                     HStack {
@@ -80,15 +87,14 @@ struct ProfileView: View {
 // Movie Data Model
 struct Movie: Identifiable {
     let id = UUID()
-    let title: String
     let imageName: String
 }
 
 // Example Movies Data
 let movies = [
-    Movie(title: "World's Greatest Dad", imageName: "worlds_greatest_dad"),
-    Movie(title: "The Shawshank Redemption", imageName: "shawshank_redemption"),
-    Movie(title: "A Star Is Born", imageName: "a_star_is_born")
+    Movie(imageName: "move1"),
+    Movie(imageName: "move2"),
+    Movie(imageName: "move3")
 ]
 
 // Movie Card View
@@ -96,17 +102,11 @@ struct MovieView: View {
     let movie: Movie
     
     var body: some View {
-        VStack {
-            Image(movie.imageName)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 172, height: 237)
-                .cornerRadius(20, corners: [.topLeft, .topRight, .bottomLeft, .bottomRight]) // Mixed corners
-            Text(movie.title)
-                .font(.caption)
-                .foregroundColor(.white)
-                .lineLimit(1)
-        }
+        Image(movie.imageName)
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(width: 172, height: 237)
+            .cornerRadius(20, corners: [.topLeft, .topRight, .bottomLeft, .bottomRight]) // Mixed corners
     }
 }
 
